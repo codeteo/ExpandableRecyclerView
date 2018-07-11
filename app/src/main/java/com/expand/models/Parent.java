@@ -12,12 +12,14 @@ public class Parent extends MultiCheckExpandableGroup {
 
     private int id;
     private String name;
+    private boolean isFavorite;
 
     private List<Child> childIDs;
 
-    public Parent(int id, String title, List<Child> items) {
+    public Parent(int id, String title, List<Child> items, boolean isFavorite) {
         super(title, items);
         this.id = id;
+        this.isFavorite = isFavorite;
     }
 
     public int getId() {
@@ -42,5 +44,13 @@ public class Parent extends MultiCheckExpandableGroup {
 
     public void setChildIDs(List<Child> childIDs) {
         this.childIDs = childIDs;
+    }
+
+    public boolean isFavorite() {
+        return isFavorite;
+    }
+
+    public void setFavorite(boolean favorite) {
+        isFavorite = favorite;
     }
 }

@@ -6,7 +6,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 
 import com.expand.adapter.MyAdapter;
 import com.expand.models.Parent;
@@ -38,12 +37,12 @@ public class MainActivity extends AppCompatActivity {
         adapter.setOnGroupExpandCollapseListener(new GroupExpandCollapseListener() {
             @Override
             public void onGroupExpanded(ExpandableGroup group) {
-                Log.i(TAG, "EXPAND   " + ((Parent) group).getId());
+                adapter.toggleCheck(((Parent) group).getId());
             }
 
             @Override
             public void onGroupCollapsed(ExpandableGroup group) {
-                Log.i(TAG, "COLLAPSE   " + ((Parent) group).getId());
+                adapter.toggleCheck(((Parent) group).getId());
             }
         });
 

@@ -1,7 +1,7 @@
 package com.expand.adapter;
 
+import android.support.v7.widget.AppCompatCheckedTextView;
 import android.view.View;
-import android.widget.TextView;
 
 import com.expand.R;
 import com.thoughtbot.expandablerecyclerview.models.ExpandableGroup;
@@ -13,7 +13,7 @@ import com.thoughtbot.expandablerecyclerview.viewholders.GroupViewHolder;
 
 public class MyParentViewHolder extends GroupViewHolder {
 
-    private TextView textView;
+    private AppCompatCheckedTextView textView;
 
     public MyParentViewHolder(View itemView) {
         super(itemView);
@@ -23,4 +23,9 @@ public class MyParentViewHolder extends GroupViewHolder {
     public void setChildren(ExpandableGroup children) {
         textView.setText(children.getTitle());
     }
+
+    public void setFavorite(boolean isFavorite) {
+        textView.setChecked(isFavorite);
+    }
+
 }
