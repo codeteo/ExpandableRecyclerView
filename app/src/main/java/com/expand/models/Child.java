@@ -9,17 +9,20 @@ import android.os.Parcelable;
 
 public class Child implements Parcelable {
 
-    private String id;
     private String name;
+    private boolean isFavorite;
+
+    public Child(String name, boolean isFavorite) {
+        this.name = name;
+        this.isFavorite = isFavorite;
+    }
 
     protected Child(Parcel in) {
-        id = in.readString();
         name = in.readString();
     }
 
     @Override
     public void writeToParcel(Parcel dest, int flags) {
-        dest.writeString(id);
         dest.writeString(name);
     }
 
@@ -39,14 +42,6 @@ public class Child implements Parcelable {
             return new Child[size];
         }
     };
-
-    public String getId() {
-        return id;
-    }
-
-    public void setId(String id) {
-        this.id = id;
-    }
 
     public String getName() {
         return name;
