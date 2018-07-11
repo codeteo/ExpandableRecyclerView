@@ -1,6 +1,6 @@
 package com.expand.models;
 
-import com.thoughtbot.expandablerecyclerview.models.ExpandableGroup;
+import com.thoughtbot.expandablecheckrecyclerview.models.MultiCheckExpandableGroup;
 
 import java.util.List;
 
@@ -8,22 +8,23 @@ import java.util.List;
  * Created by teo on 11/7/2018.
  */
 
-public class Parent extends ExpandableGroup<Child> {
+public class Parent extends MultiCheckExpandableGroup {
 
-    private String id;
+    private int id;
     private String name;
 
     private List<Child> childIDs;
 
-    public Parent(String title, List<Child> items) {
+    public Parent(int id, String title, List<Child> items) {
         super(title, items);
+        this.id = id;
     }
 
-    public String getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(int id) {
         this.id = id;
     }
 

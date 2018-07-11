@@ -21,19 +21,19 @@ public class MyDataFactory {
     }
 
     private static Parent makeParentOne() {
-        return new Parent("Parent One", makeFirstChildren());
+        return new Parent(1, "Parent One", makeFirstChildren());
     }
 
     private static Parent makeParentTwo() {
-        return new Parent("Parent Two", makeSecondChildren());
+        return new Parent(2, "Parent Two", makeSecondChildren());
     }
 
     private static Parent makeParentThree() {
-        return new Parent("Parent Three", makeThirdChildren());
+        return new Parent(3, "Parent Three", makeThirdChildren());
     }
 
     private static Parent makeParentFourth() {
-        return new Parent("Parent Fourth", makeFourthChildren());
+        return new Parent(4, "Parent Fourth", makeFourthChildren());
     }
 
     private static List<Child> makeFirstChildren() {

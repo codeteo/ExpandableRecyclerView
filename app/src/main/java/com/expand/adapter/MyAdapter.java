@@ -6,7 +6,9 @@ import android.view.ViewGroup;
 
 import com.expand.R;
 import com.expand.models.Child;
-import com.thoughtbot.expandablerecyclerview.ExpandableRecyclerViewAdapter;
+import com.expand.models.Parent;
+import com.thoughtbot.expandablecheckrecyclerview.CheckableChildRecyclerViewAdapter;
+import com.thoughtbot.expandablecheckrecyclerview.models.CheckedExpandableGroup;
 import com.thoughtbot.expandablerecyclerview.models.ExpandableGroup;
 
 import java.util.List;
@@ -15,10 +17,9 @@ import java.util.List;
  * Created by teo on 11/7/2018.
  */
 
-public class MyAdapter extends ExpandableRecyclerViewAdapter<MyParentViewHolder, MyChildViewHolder> {
+public class MyAdapter extends CheckableChildRecyclerViewAdapter<MyParentViewHolder, MyChildViewHolder> {
 
-
-    public MyAdapter(List<? extends ExpandableGroup> groups) {
+    public MyAdapter(List<Parent> groups) {
         super(groups);
     }
 
@@ -26,18 +27,22 @@ public class MyAdapter extends ExpandableRecyclerViewAdapter<MyParentViewHolder,
     public MyParentViewHolder onCreateGroupViewHolder(ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext())
                 .inflate(R.layout.item_parent, parent, false);
-        return new MyParentViewHolder(view);
+        MyParentViewHolder holder = new MyParentViewHolder(view);
+//        holder.setOnGroupClickListener(this);
+        return holder;
     }
 
     @Override
-    public MyChildViewHolder onCreateChildViewHolder(ViewGroup parent, int viewType) {
+    public MyChildViewHolder onCreateCheckChildViewHolder(ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext())
                 .inflate(R.layout.item_child, parent, false);
-        return new MyChildViewHolder(view);
+        MyChildViewHolder holder = new MyChildViewHolder(view);
+//        holder.setOnChildCheckedListener(this);
+        return holder;
     }
 
     @Override
-    public void onBindChildViewHolder(MyChildViewHolder holder, int flatPosition, ExpandableGroup group, int childIndex) {
+    public void onBindCheckChildViewHolder(MyChildViewHolder holder, int flatPosition, CheckedExpandableGroup group, int childIndex) {
         final Child child = (Child) group.getItems().get(childIndex);
         ((MyChildViewHolder) holder).onBind(child);
     }
@@ -46,4 +51,5 @@ public class MyAdapter extends ExpandableRecyclerViewAdapter<MyParentViewHolder,
     public void onBindGroupViewHolder(MyParentViewHolder holder, int flatPosition, ExpandableGroup group) {
         holder.setChildren(group);
     }
+
 }
