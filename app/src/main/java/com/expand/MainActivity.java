@@ -47,7 +47,6 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-//        adapter.setChildClickListener();
     }
 
     private void setupAdapter() {

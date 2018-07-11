@@ -27,18 +27,14 @@ public class MyAdapter extends CheckableChildRecyclerViewAdapter<MyParentViewHol
     public MyParentViewHolder onCreateGroupViewHolder(ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext())
                 .inflate(R.layout.item_parent, parent, false);
-        MyParentViewHolder holder = new MyParentViewHolder(view);
-//        holder.setOnGroupClickListener(this);
-        return holder;
+        return new MyParentViewHolder(view);
     }
 
     @Override
     public MyChildViewHolder onCreateCheckChildViewHolder(ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext())
                 .inflate(R.layout.item_child, parent, false);
-        MyChildViewHolder holder = new MyChildViewHolder(view);
-//        holder.setOnChildCheckedListener(this);
-        return holder;
+        return new MyChildViewHolder(view);
     }
 
     @Override
