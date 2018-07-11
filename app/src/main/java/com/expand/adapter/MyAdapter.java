@@ -25,14 +25,14 @@ public class MyAdapter extends ExpandableRecyclerViewAdapter<MyParentViewHolder,
     @Override
     public MyParentViewHolder onCreateGroupViewHolder(ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext())
-                .inflate(R.layout.view_parent, parent, false);
+                .inflate(R.layout.item_parent, parent, false);
         return new MyParentViewHolder(view);
     }
 
     @Override
     public MyChildViewHolder onCreateChildViewHolder(ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext())
-                .inflate(R.layout.view_child, parent, false);
+                .inflate(R.layout.item_child, parent, false);
         return new MyChildViewHolder(view);
     }
 

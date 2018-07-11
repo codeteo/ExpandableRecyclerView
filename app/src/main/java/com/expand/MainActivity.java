@@ -16,10 +16,6 @@ import static com.expand.data.MyDataFactory.makeData;
 
 public class MainActivity extends AppCompatActivity {
 
-    String[] testgroupData =  {"Apple","Banana","Mango", "Orange", "Pineapple", "Strawberry"};
-    String[] testChildData =  {"10","20","30", "40", "50", "10","20","30", "40",
-            "50", "10","20","30", "40", "50", "10","20","30", "40", "50", "10","20","30", "40", "50"};
-
     private RecyclerView recyclerView;
     private MyAdapter adapter;
 

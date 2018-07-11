@@ -17,7 +17,7 @@ public class MyChildViewHolder extends ChildViewHolder {
 
     public MyChildViewHolder(View itemView) {
         super(itemView);
-        textView = itemView.findViewById(R.id.tv_child_name);
+        textView = itemView.findViewById(R.id.tv_item_child_name);
     }
 
     public void onBind(Child child) {
