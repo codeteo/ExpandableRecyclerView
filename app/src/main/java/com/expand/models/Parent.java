@@ -1,17 +1,23 @@
 package com.expand.models;
 
+import com.thoughtbot.expandablerecyclerview.models.ExpandableGroup;
+
 import java.util.List;
 
 /**
  * Created by teo on 11/7/2018.
  */
 
-public class Parent {
+public class Parent extends ExpandableGroup<Child> {
 
     private String id;
     private String name;
 
     private List<Child> childIDs;
+
+    public Parent(String title, List<Child> items) {
+        super(title, items);
+    }
 
     public String getId() {
         return id;
