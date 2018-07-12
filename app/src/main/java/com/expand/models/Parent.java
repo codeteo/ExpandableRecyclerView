@@ -20,6 +20,8 @@ public class Parent extends MultiCheckExpandableGroup {
         super(title, items);
         this.id = id;
         this.isFavorite = isFavorite;
+        this.name = title;
+        this.childIDs = items;
     }
 
     public int getId() {

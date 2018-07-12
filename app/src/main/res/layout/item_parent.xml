@@ -3,16 +3,24 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:orientation="horizontal"
     android:layout_width="match_parent"
-    android:layout_height="@dimen/list_item_height" >
+    android:layout_height="@dimen/list_item_height"
+    android:layout_marginLeft="@dimen/margin_default"
+    android:layout_marginRight="@dimen/margin_default">
 
-    <android.support.v7.widget.AppCompatCheckedTextView
+    <TextView
         android:id="@+id/tv_item_parent_name"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:layout_gravity="center" />
+
+    <CheckBox
+        android:id="@+id/cb_item_parent_check"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:layout_gravity="center"
         android:gravity="center"
         android:checkMark="?android:attr/listChoiceIndicatorSingle"
-        android:textAllCaps="true"
-        tools:text="Artist Name" />
+        android:textAllCaps="true" />
 
 </LinearLayout>

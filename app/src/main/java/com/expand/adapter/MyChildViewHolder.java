@@ -1,11 +1,11 @@
 package com.expand.adapter;
 
-import android.support.v7.widget.AppCompatCheckedTextView;
 import android.view.View;
+import android.widget.CheckBox;
 import android.widget.Checkable;
+import android.widget.TextView;
 
 import com.expand.R;
-import com.expand.models.Child;
 import com.thoughtbot.expandablecheckrecyclerview.viewholders.CheckableChildViewHolder;
 
 /**
@@ -14,19 +14,21 @@ import com.thoughtbot.expandablecheckrecyclerview.viewholders.CheckableChildView
 
 public class MyChildViewHolder extends CheckableChildViewHolder {
 
-    private AppCompatCheckedTextView textView;
+    public CheckBox checkBox;
+    public TextView tvName;
 
     public MyChildViewHolder(View itemView) {
         super(itemView);
-        textView = itemView.findViewById(R.id.tv_item_child_name);
+        checkBox = itemView.findViewById(R.id.cb_item_child_check);
+        tvName = itemView.findViewById(R.id.tv_item_child_name);
     }
 
     @Override
     public Checkable getCheckable() {
-        return textView;
+        return checkBox;
     }
 
-    public void onBind(Child child) {
-        textView.setText(child.getName());
+    public void setName(String name) {
+        tvName.setText(name);
     }
 }
